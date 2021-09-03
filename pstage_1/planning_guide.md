@@ -2,6 +2,20 @@
 
 <br>
 
+---
+
+<br>
+
+## 🍡 떡볶이조 팀원들 🔥
+
+|김다영|김아경|문하겸|박지민|이요한|전준영|정민지|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| [![Avatar](https://avatars.githubusercontent.com/u/68893924?v=4)](https://github.com/keemdy) |[![Avatar](https://avatars.githubusercontent.com/u/70522267?v=4)](https://github.com/EP000)| [![Avatar](https://avatars.githubusercontent.com/u/44228269?v=4)](https://github.com/ddobokki) | [![Avatar](https://avatars.githubusercontent.com/u/82632580?v=4)](https://github.com/ddeokbboki-good) | [![Avatar](https://avatars.githubusercontent.com/u/49181231?v=4)](https://github.com/l-yohai) | [![Avatar](https://avatars.githubusercontent.com/u/50571795?v=4)](https://github.com/20180707jun) | [![Avatar](https://avatars.githubusercontent.com/u/45448731?v=4)](https://github.com/minji-o-j) |
+|week4|　　|week2|week5|week1|　　　	　		　　　	|week3|
+
+
+<br>
+
 ![](/images/image-20210903191905704.png)
 
 <br>
@@ -433,19 +447,9 @@ Hard하게 Augmentation을 적용한 이미지를 데이터셋에 추가하기�
 <br>
 
 > 요한: 실험 일지와 코드를 체계적으로 관리하지 못한 것이 가장 아쉽습니다. 서버가 5킬을 당한게 좀 컸던 것 같아요. 그래도 너무 좋은 팀원들과 미흡하지만 재밌는 대회 함께 진행할 수 있어서 너무 좋았습니다!
+
 > 지민: 모두 항상 열심히 하시는 모습이 자극이 되어서 같이 완주할 수 있었던 것 같습니다. 특히 요한님 베이스라인 부터 모르는 부분 질문까지 친절하게 답해주셔서 감사했습니다!!
+
 > 하겸: 아쉬운 점 투성이지만 성장통이라고 생각합니다.
+
 > 다영: 첫 대회라 곱씹을수록 아쉬운 점이 많지만 좋은 팀원들을 만나 끝맺음이 좋았습니다 ! 덕분에 많이 배웠고, 자극도 많이 받았습니다. 지속 가능한 성장을 위해 파이팅 !!
-
-<br>
-
----
-
-<br>
-
-## 🍡 떡볶이조 팀원들 🔥
-
-|김다영|김아경|문하겸|박지민|이요한|전준영|정민지|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| [![Avatar](https://avatars.githubusercontent.com/u/68893924?v=4)](https://github.com/keemdy) |[![Avatar](https://avatars.githubusercontent.com/u/70522267?v=4)](https://github.com/EP000)| [![Avatar](https://avatars.githubusercontent.com/u/44228269?v=4)](https://github.com/ddobokki) | [![Avatar](https://avatars.githubusercontent.com/u/82632580?v=4)](https://github.com/ddeokbboki-good) | [![Avatar](https://avatars.githubusercontent.com/u/49181231?v=4)](https://github.com/l-yohai) | [![Avatar](https://avatars.githubusercontent.com/u/50571795?v=4)](https://github.com/20180707jun) | [![Avatar](https://avatars.githubusercontent.com/u/45448731?v=4)](https://github.com/minji-o-j) |
-|week4|　　|week2|week5|week1|　　　	　		　　　	|week3|
