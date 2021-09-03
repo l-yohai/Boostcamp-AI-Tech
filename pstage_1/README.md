@@ -52,27 +52,33 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
   아이콘 제작자 <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
 </p>
 
+
+<br>
+<br>
+
 <p align="center">
+<div markdown="1">
 
-| Label |   Mask    | Gender |      Age       |
-| :---: | :-------: | :----: | :------------: |
-|   0   |   Wear    |  Male  |      < 30      |
-|   1   |   Wear    |  Male  | >= 30 and < 60 |
-|   2   |   Wear    |  Male  |     >= 60      |
-|   3   |   Wear    | Female |      < 30      |
-|   4   |   Wear    | Female | >= 30 and < 60 |
-|   5   |   Wear    | Female |     >= 60      |
-|   6   | Incorrect |  Male  |      < 30      |
-|   7   | Incorrect |  Male  | >= 30 and < 60 |
-|   8   | Incorrect |  Male  |     >= 60      |
-|   9   | Incorrect | Female |      < 30      |
-|  10   | Incorrect | Female | >= 30 and < 60 |
-|  11   | Incorrect | Female |     >= 60      |
-|  12   | Not Wear  |  Male  |      < 30      |
-|  13   | Not Wear  |  Male  | >= 30 and < 60 |
-|  14   | Not Wear  |  Male  |     >= 60      |
-|  15   | Not Wear  | Female |      < 30      |
-|  16   | Not Wear  | Female | >= 30 and < 60 |
-|  17   | Not Wear  | Female |     >= 60      |
+  | Label |   Mask    | Gender |      Age       |
+  | :---: | :-------: | :----: | :------------: |
+  |   0   |   Wear    |  Male  |      < 30      |
+  |   1   |   Wear    |  Male  | >= 30 and < 60 |
+  |   2   |   Wear    |  Male  |     >= 60      |
+  |   3   |   Wear    | Female |      < 30      |
+  |   4   |   Wear    | Female | >= 30 and < 60 |
+  |   5   |   Wear    | Female |     >= 60      |
+  |   6   | Incorrect |  Male  |      < 30      |
+  |   7   | Incorrect |  Male  | >= 30 and < 60 |
+  |   8   | Incorrect |  Male  |     >= 60      |
+  |   9   | Incorrect | Female |      < 30      |
+  |  10   | Incorrect | Female | >= 30 and < 60 |
+  |  11   | Incorrect | Female |     >= 60      |
+  |  12   | Not Wear  |  Male  |      < 30      |
+  |  13   | Not Wear  |  Male  | >= 30 and < 60 |
+  |  14   | Not Wear  |  Male  |     >= 60      |
+  |  15   | Not Wear  | Female |      < 30      |
+  |  16   | Not Wear  | Female | >= 30 and < 60 |
+  |  17   | Not Wear  | Female |     >= 60      |
 
+</div>
 </p>
