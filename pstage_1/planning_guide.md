@@ -39,6 +39,8 @@
 
 ## 🦆 대회 전략 수립 및 협업환경 구축
 
+<br>
+
 <p align="center"><em>이번생애 협업은 처음이라..</em></p>
 
 <br>
@@ -324,11 +326,12 @@ Hard하게 Augmentation을 적용한 이미지를 데이터셋에 추가하기�
 
 ### 🫂 앙상블
 
-![](/images/image-20210903215626128.png)
 
 <br>
 
 <p align="center">
+  ![](/images/image-20210903215626128.png)
+
   <em>너 아이큐 150, 내 아이큐 150, 합치면 300!</em>
 </p>
 
@@ -372,6 +375,8 @@ Hard하게 Augmentation을 적용한 이미지를 데이터셋에 추가하기�
 <br>
 
 ## 💯 굿 프랙티스
+
+<br>
 
 <p align="center">
   <em>결과적으로 옳았던 선택들</em>
