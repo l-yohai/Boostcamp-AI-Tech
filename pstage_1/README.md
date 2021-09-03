@@ -49,8 +49,10 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 ![](/images/image-20210903122042492.png)
 
 <p align="center">
-  <div>아이콘 제작자 <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div>
+  아이콘 제작자 <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
 </p>
+
+<p align="center">
 
 | Label |   Mask    | Gender |      Age       |
 | :---: | :-------: | :----: | :------------: |
@@ -72,3 +74,5 @@ COVID-19의 확산으로 우리나라는 물론 전 세계 사람들은 경제�
 |  15   | Not Wear  | Female |      < 30      |
 |  16   | Not Wear  | Female | >= 30 and < 60 |
 |  17   | Not Wear  | Female |     >= 60      |
+
+</p>
