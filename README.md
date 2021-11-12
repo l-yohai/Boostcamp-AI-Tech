@@ -26,7 +26,7 @@
 - F1 (micro): 74.3060
 - AUPRC: 79.5230 (9등)
 
-### 🥉Private Leaderboard
+### 🥈Private Leaderboard
 
 - F1 (micro): 73.7320
 - AUPRC: 82.9640 (5등 - 4위 상승)
@@ -36,12 +36,12 @@
 
 ## P Stage 3 - MRC ODQA
 
-### 🥉Public Leaderboard
+### 🥈Public Leaderboard
 
 - EM: 72.0800
 - F1: 81.2700 (5등)
 
-### 🥉Private Leaderboard
+### 🥇Private Leaderboard
 
 - EM: 71.6700
 - F1: 81.4000 (3등 - 2위 상승)
