@@ -4,7 +4,7 @@
 
 # MRC - Open Domain Question Answering Wrap up
 
-![Final Result](/images/mrc_odqa/mrc/image-20211106210830331.png)
+![Final Result](/images/mrc_odqa/image-20211106210830331.png)
 
 약 4주가량 참여했던 P Stage 의 `MRC - Open Domain Question Answering` 대회를 Wrap up 하였습니다. 주로 제가 작업한 것들에 대해서만 서술하고 있습니다. 전체적인 내용이 궁금하시다면 [팀블로그](https://cheonggyemountain-sherpa.github.io/MRC-Open-Domain-Question-Answering/) 를 참고해주세요!
 
@@ -27,9 +27,9 @@
 
 Question Answering (QA) 은 다양한 종류의 질문에 대해 대답하는 인공지능을 만드는 연구 분야입니다. 다양한 QA 시스템 중, Open-Domain Question Answering (ODQA) 은 주어지는 지문이 따로 존재하지 않고 사전에 구축되어 있는 Knowledge resource 에서 질문에 대답할 수 있는 문서를 찾아 질문에 대한 답을 하는 과제로 일반적인 QA 보다 Challenging한 과제입니다. 
 
-![What is Goethe's masterpiece?](/images/mrc_odqa/mrc/image-20211106222959110.png)
+![What is Goethe's masterpiece?](/images/mrc_odqa/image-20211106222959110.png)
 
-![ODQA Workflow](/images/mrc_odqa/mrc/image-20211106223121104.png)
+![ODQA Workflow](/images/mrc_odqa/image-20211106223121104.png)
 
 대표적인 ODQA 시스템의 예시로는 Google 검색엔진이 있습니다. Google에 질문을 입력하게 되면 Wikipedia 등에서 Knowledge Resource에서 질문에 답을 할 수 있는 Retrieval이 동작하여 관련 문서를 찾고, Reader가 그 문서 속에서 정답을 찾아 답을 알려주는 시스템입니다.
 
@@ -49,7 +49,7 @@ Question Answering (QA) 은 다양한 종류의 질문에 대해 대답하는 �
 
 지금까지의 경험과 위의 제약사항들을 토대로 보다 strict 하게 계획을 세우기로 하였고, 아래의 Timeline 대로 작업을 진행하기로 했습니다.
 
-![Timeline](/images/mrc_odqa/mrc/image-20211109124548155.png)
+![Timeline](/images/mrc_odqa/image-20211109124548155.png)
 
 첫 1주차에는 주어진 baseline 코드가 어렵게 작성되어 있었기 때문에 MRC라는 Task에 대한 공부를 바탕으로 baseline 코드 분석 및 refactoring을 진행했습니다. 2주차부터 본격적으로 EDA와 성능평가를 기반으로 baseline 의 어떤 부분을 보완하면 성능을 향상시킬 수 있을지를 집중적으로 탐색해보았습니다. 그리고 그렇게 탐색한 결과를 바탕으로 3주차에는 data augmentation 과 retrieval, reader 의 성능을 향상시키기 위한 아이디어들을 실제로 구현하고 실험하며 성능을 최대한 끌어올렸고, 그렇게 얻은 모델들을 마지막 4주차 때 앙상블하여 최종 결과를 도출했습니다.
 
@@ -77,7 +77,7 @@ Question Answering (QA) 은 다양한 종류의 질문에 대해 대답하는 �
 
 # Data
 
-![Dataset](/images/mrc_odqa/mrc/image-20211109060404922.png)
+![Dataset](/images/mrc_odqa/image-20211109060404922.png)
 
 주어진 학습 데이터의 샘플은 3,952개로 매우 적은 양이었습니다. 사전학습된 모델로 Fine-tuning을 진행했을 때 쉽게 Overfitting이 일어날 거란 판단을 하게 되었고, <span class="linear_highlight">Augmentation에 집중하여 좀 더 Robust한 모델이 될 수 있도록</span> 하고 다양한 Augmentation들을 진행한 후 모델에 쉽게 공급하기 위해서 해당 파이프라인을 구축하는 것에 집중할 수 있도록 계획을 세웠습니다.
 
@@ -142,9 +142,9 @@ Top 1 의 Retrieval 을 수행했을 때는 DPR 보다 높은 정확도를 기�
 
 저희는 실험을 진행한 모든 Retrieval 의 성능평가를 진행했고, 그 결과는 아래와 같습니다. 모든 구간에서 Hybrid Retrieval 의 성능이 가장 높았으며, 예상대로 DPR 이 BM25 의 단점을 잘 보완해준다는 것을 확인할 수 있었습니다.
 
-![Top-k Retrieval Acc.](/images/mrc_odqa/mrc/Top-k_Retrieval_Acc.png)
+![Top-k Retrieval Acc.](/images/mrc_odqa/Top-k_Retrieval_Acc.png)
 
-![Retrieval Benchmark (Acc.)](/images/mrc_odqa/mrc/image-20211107042614732.png)
+![Retrieval Benchmark (Acc.)](/images/mrc_odqa/image-20211107042614732.png)
 
 <span class="linear_highlight">최종적으로 가장 성능이 좋았던 Hybrid Retrieval 을 선택하게 되었고, Top-k 로 가져오는 Passage 의 개수는 Reader 모델을 실험하고 Leaderboard 에 제출하면서 최적의 개수를 찾기로 결정하였습니다.</span>
 
@@ -171,7 +171,7 @@ Reader의 경우 `Extractive` 와 `Generative` 방식이 존재하는데, Extrac
 
 ## Backbone
 
-![Backbone 성능평가](/images/mrc_odqa/mrc/image-20211107045109925.png)
+![Backbone 성능평가](/images/mrc_odqa/image-20211107045109925.png)
 
 Extractive 방식으로 사용할 수 있는 여러 가지 사전학습 모델로 성능평가를 진행했고, 테스트 결과 validation EM 기준 가장 점수가 높았던 `klue/roberta-large` 모델을 backbone 으로 삼게 되었습니다.
 
@@ -183,7 +183,7 @@ Extractive 방식으로 사용할 수 있는 여러 가지 사전학습 모델�
 question + [SEP] + passage_1 + ' ' + passage_2 + ' ' + ... + passage_k
 ```
 
-![TF-IDF top-k passage inference](/images/mrc_odqa/mrc/image-20211109062628253.png)
+![TF-IDF top-k passage inference](/images/mrc_odqa/image-20211109062628253.png)
 
 
 K의 개수를 늘릴 수록 public leaderboard 와 validation score 의 간극이 줄어드는 것을 확인하였고, 이러한 retrieval 방식에 착안하여 다음 실험을 계획할 수 있었습니다.
@@ -205,7 +205,7 @@ BM25를 통해 가져온 negative sample을 추가하여 같이 학습시켰을 
 3. answer 키워드가 반복될 수 있는 positive sample 을 사용하면 오히려 모델의 혼란이 가중될 것이다.
 
 
-![W&B line chart concat negative samples](/images/mrc_odqa/mrc/image-20211109095217407.png)
+![W&B line chart concat negative samples](/images/mrc_odqa/image-20211109095217407.png)
 
 <span class="linear_highlight">실험결과 예상과 같이 여러 passage를 concat 하였을 때 기존 validation score 보다 높은 점수를 기록하였고, possitive sample 보다는 negative sample 을 concat 하여 Reader 를 학습시켰을 때 훨씬 높은 점수를 기록할 수 있었습니다.</span>
 
@@ -213,7 +213,7 @@ Negative sample 을 선택하는 방법에 따라서도 Reader 의 성능이 천
 
 사용할 수 있는 Retrieval 은 BM25, Elastic search, Hybrid retrieval 이 있었으며, Tokenizer 는 Elastic search 에 사용되는 Nori Tokenizer 와 BERT Tokenizer 가 있었습니다. 저희는 이 조합들을 사용하여 validation 을 측정해보았고 실험결과는 아래와 같습니다.
 
-![W&B line chart according to negative sampling](/images/mrc_odqa/mrc/image-20211109101344173.png)
+![W&B line chart according to negative sampling](/images/mrc_odqa/image-20211109101344173.png)
 
 결국, 최종적으로 사용한 Negative Sampling 기준은 아래와 같습니다.
 
@@ -227,7 +227,7 @@ Elastic Search 와 Nori Tokenizer 를 사용하며, 정답을 포함하지 않�
 
 기존 Train dataset 에는 약 500 건 정도의 ground truth passage 가 중복이었고, 저희가 사용하는 wiki 에는 중복되는 Passage 가 약 3,000 개, 같은 title 의 문서이지만 문단이 다른 경우가 약 29,000 개로 unique 한 wiki 문서는 총 31,755 개였습니다. 
 
-![Concat passage distribution](/images/mrc_odqa/mrc/Chart_Title_(1).png)
+![Concat passage distribution](/images/mrc_odqa/Chart_Title_(1).png)
 
 이 때 제 방식으로 Train dataset 에 대하여 Top-k (k=4) 개의 문서를 합쳤을 때 총 19,760 개의 wiki passage 를 보게 되는데, 위의 차트와 같이 Hybrid Retrieval 로 Negative Sampling 을 진행하였을 때 중복된 문서가 약 `1,400 개` 정도 더 포함되어 있었습니다. <span class="linear_highlight">또한 Semantic 한 정보까지 포함하여 고려하는 Hybrid Retrieval 을 사용하게 되면 중복된 Ground Truth 에 포함되는 Negative Sample 들이 대체로 일치했습니다. 따라서 이미 너무나도 쉽게 Over-fitting 이 발생하는 상황에서 중복되는 Passage 를 많이 포함시키며 오히려 Negative Sample 로서 기대했던 역할을 제대로 수행하지 못하게 되었다고 생각했습니다.</span>
 
@@ -251,18 +251,18 @@ Elastic Search 와 Nori Tokenizer 를 사용하며, 정답을 포함하지 않�
       }
 ```
 
-![f1 & batch size & learning rate](/images/mrc_odqa/mrc/image-20211107051016138.png)
+![f1 & batch size & learning rate](/images/mrc_odqa/image-20211107051016138.png)
 
-![hyperparameter importance](/images/mrc_odqa/mrc/image-20211107051439508.png)
+![hyperparameter importance](/images/mrc_odqa/image-20211107051439508.png)
 
 Hyperparameter Search 를 진행하면서 Validation Score 가 굉장히 Sensitive 하게 변동되는 경향이 있었고, 그 때문에 결과가 좋지 않은 Trial 에 대하여 Pruning 이 올바로 동작하지 않는 이슈가 있었습니다. 따라서 모델의 성능이 어떠한 Parameter 에 많은 영향을 받고 어떤 조합일 때 점수가 높게 분포되는지를 확인해보았습니다. 결과적으로 learning rate 의 영향을 상당히 많이 받으며, batch size 가 클 때 학습이 가장 잘 이루어진다는 것을 알 수 있었습니다.
 
-![sweep](/images/mrc_odqa/mrc/image-20211107050716799.png)
+![sweep](/images/mrc_odqa/image-20211107050716799.png)
 
 그렇게 약 60번의 trial 을 시도했고, Learning rate 와 batch size 에 주목하며 Search 를 진행하는 Hyperparameter 범위를 좁혀가며 실험을 진행했습니다. Search 가 끝난 이후에는 W&B의 sweep 기능을 이용하여 가장 좋은 조합을 찾을 수 있었습니다.
 
 
-![](/images/mrc_odqa/mrc/image-20211107050457499.png)
+![](/images/mrc_odqa/image-20211107050457499.png)
 
 
 그렇게 public leaderboard 기준 5 이상의 score 향상을 얻을 수 있었습니다.
@@ -281,7 +281,7 @@ Hyperparameter Search 를 진행하면서 Validation Score 가 굉장히 Sensiti
 
 Extractive 방식에 따라 문서 내에 존재하는 토큰의 위치를 찾게 되는데, 위의 예시처럼 `형용사` 를 포함해야 할 것인지, `반복` 되는 키워드의 경우 어떻게 잘라내야 할 것인지, `문장` 이 정답이라면 문장 전체를 정답으로 할 지, 아니면 `명사구` 가 될 수 있도록 end position 을 이동시켜야 할 지 등에 대한 고민을 하게 되었습니다. 그리고 이러한 문제가 발생한 원인은 모델이 <span class="linear_highlight">'일관적이지 않게'</span> 정답을 추출해내고 있기 때문일 것으로 예상하고 사용하고 있던 huggingface 의 QuestionAnswering 소스 코드를 살펴보았습니다.
 
-![RobertaForQuestionAnswering](/images/mrc_odqa/mrc/image-20211110040706772.png)
+![RobertaForQuestionAnswering](/images/mrc_odqa/image-20211110040706772.png)
 
 Huggingface 의 Extractive Reader 방식으로 사용되는 [QuestionAnswering](https://huggingface.co/transformers/_modules/transformers/models/roberta/modeling_roberta.html#RobertaForQuestionAnswering) 모델의 head 는 backbone 의 sequence output shape 인 hidden_size 를 2(start_logit, end_logit) 로 축소한 Linear layer 가 사용됩니다. 저희가 backbone 으로 사용한 `klue/roberta-large` 의 경우 hidden_size 가 1,024 로 매우 컸는데, 실험을 이어가다 보니 <span class="linear_highlight">이렇게 큰 사이즈의 벡터를 바로 두 개의 logit 으로 축소한다는 것</span>에서 위의 예시와 같은 문제점들이 생겨날 수 있을 것으로 판단하게 되었습니다. 또한 <span class="linear_highlight">다양한 head 를 사용하고 튜닝함으로써 모델이 보다 일관적으로 정답을 예측</span>하고, 이러한 문제를 해결할 수 있을 것으로 기대하게 되었습니다. 마지막으로 최종 제출 전략인 Ensemble 을 고려하였을 때 <span class="linear_highlight">head 에 다양성을 준 모델의 퍼포먼스가 낮아도 Ensemble 의 좋은 재료가 될 수 있을 것</span>이란 기대로, 최대한 다양한 head 를 실험해보기로 하였습니다.
 
@@ -296,19 +296,19 @@ Head 에 custom layer 를 추가하기 위해 아래 논문과 블로그에서 �
 
 제가 실험에 사용했던 Custom Layer 와 전체적인 Architecture 는 아래와 같습니다.
 
-![Custom Heads](/images/mrc_odqa/mrc/image-20211110070044172.png)
+![Custom Heads](/images/mrc_odqa/image-20211110070044172.png)
 
 
 RNN Family 를 사용한 head 의 모델에서는 정답이 포함된 Sequence 에 조금 더 집중할 수 있기를 기대했고, CNN 은 정답과 조금 더 유사한 feature 들, Transformer Encoder 에서는 사전학습된 Backbone 의 representation 보다 주어진 학습 데이터에 집중하여 보다 성능을 개선할 수 있기를 기대했습니다.
 
 
-![W&B line chart custom heads](/images/mrc_odqa/mrc/image-20211110071600955.png)
+![W&B line chart custom heads](/images/mrc_odqa/image-20211110071600955.png)
 
 막상 실험을 진행하니, 현재 backbone 도 과적합이 쉽게 일어나는 sensitive 한 상황이었기 때문에 head 에서 복잡도를 키우게 되니 validation score 는 backbone 보다 하락하였습니다. 특히 Conv1d layer 에서는 out_feature 가 작을수록, RNN Family 에서는 hidden_size 가 클수록 좋은 성능을 보였으며 전체적으로 custom layer 의 개수를 늘릴 수록 학습이 제대로 진행되지 않았습니다.
 
 Custom head 를 부착한 모델들로 inference 를 진행한 후 나온 nbest_predictions 를 정성적으로 살펴보았을 때 각각의 head 들의 특징을 대략적으로나마 알 수 있었는데
 
-![Qualitative evaluation](/images/mrc_odqa/mrc/image-20211110091444688.png)
+![Qualitative evaluation](/images/mrc_odqa/image-20211110091444688.png)
 
 위의 예시에서 Conv1d 는 정답인 `사락사라` 와 비슷한 의미를 가진 '행성', '지구', '베텔게우스' 등의 단어에 집중하는 모습을 보였고, Bi-LSTM과 Bi-GRU 는 정답인 `사락사라` 가 포함되어 있는 문장인 `40억년전 지구에서, 사락사라의 사람들이 자신들만의 낙원을 만들기 위해 지구에 착륙하였다.` 라는 시퀀스에 집중하였으며, Transformer Encoder 의 경우 Conv1d 와 RNN Family 의 특성을 모두 가지고 있는 듯한 경향을 보였습니다.
 
@@ -325,7 +325,7 @@ Custom head 를 부착한 모델들로 inference 를 진행한 후 나온 nbest_
 
 ### AEDA
 
-![AEDA punctuation](/images/mrc_odqa/mrc/image-20211110162348848.png)
+![AEDA punctuation](/images/mrc_odqa/image-20211110162348848.png)
 
 
 [AEDA(An Easier Data Augmentation Technique for Text Classification)](https://arxiv.org/pdf/2108.13230.pdf) 는 Original Text 의 random 한 위치에 punctuation 을 삽입하는 Augmentation 방법입니다. 
@@ -350,7 +350,7 @@ Custom head 를 부착한 모델들로 inference 를 진행한 후 나온 nbest_
 
 다음으로 시도한 Augmentation 은 Sentence 를 뒤섞는 방법입니다.
 
-![Origin Data](/images/mrc_odqa/mrc/image-20211110200555562-6542356.png)
+![Origin Data](/images/mrc_odqa/image-20211110200555562-6542356.png)
 
 위의 예시를 다시 보면, `유령은 어느 행성에서 지구로 왔는가?` 에 대한 정답은 `사락사라` 입니다. 이 때 정답이 포함된 문장은 Passage 의 가장 첫 부분에 나타나고 있습니다. 또한 이 질문의 경우 <span class="linear_highlight">앞, 뒷문장 또는 문서의 맥락과 상관 없이 정답이 포함된 문장만 보더라도 정답을 예측할 수 있습니다.</span> 이렇게 여러 문장과의 관계를 살피지 않고 한 문장만 보고 정답을 맞출 수 있는 쉬운 질문의 경우 다른 문장은 학습에 오히려 `방해요소로 작용할 것`이란 생각을 하게 되었습니다. 그 생각을 바탕으로 문장들을 뒤섞는 아이디어를 떠올리게 되었고 [Data-Augmentation-NLP](https://www.google.co.kr/amp/s/neptune.ai/blog/data-augmentation-nlp/amp) 해당 블로그를 참조하여 성능 향상 가능성을 보게 되었습니다.
 
@@ -369,9 +369,9 @@ for i in tqdm(range(len(train_dataset))):
 
 kss 라이브러리의 `split_sentences` 함수를 사용하여 passage 를 문장단위로 분리한 이후 random 으로 shuffle 을 진행하였습니다. 이 때 정답의 시작 인덱스가 변경되기 때문에, 분리한 문장 배열에서 원래 정답이 속해있던 문장의 index 를 hash_table 에 저장한 뒤 변경된 문장의 위치에서 올바른 정답을 찾아갈 수 있는 처리를 해주었습니다.
 
-![Sentence Shuffle](/images/mrc_odqa/mrc/image-20211110155315446.png)
+![Sentence Shuffle](/images/mrc_odqa/image-20211110155315446.png)
 
-![Sentence Shuffled Data](/images/mrc_odqa/mrc/image-20211110201240878.png)
+![Sentence Shuffled Data](/images/mrc_odqa/image-20211110201240878.png)
 
 결과는 위의 사진과 같습니다. 문장의 위치를 섞어줌으로써 Backbone 에게 어려운 Sample 을 더 많이 보여주어 성능 향상을 기대해볼 수 있었습니다.
 
@@ -381,13 +381,13 @@ kss 라이브러리의 `split_sentences` 함수를 사용하여 passage 를 문�
 
 기존에는 Ground Truth 에다가 Negative Sample 4개를 이어붙여서 학습을 진행했었는데 sentence shuffle 을 진행하면서 이어붙이는 passage 들도 뒤섞는 것에 대한 아이디어를 떠올리게 되었습니다. <span class="linear_highlight">왜냐하면 Ground Truth 가 항상 맨 앞에 등장하기 때문에 Reader 모델이 Passage 들의 앞부분에만 집중할 수 있다고 생각했기 때문입니다. 또한 inference phase 에서 Retrieval 의 score 대로 passage 를 이어붙이게 되는데, 이 때 정답을 찾을 수 있는 passage 가 맨 앞에 오지 않는다면, Reader 의 성능이 급격히 떨어질 수도 있을 것이란 생각을 하게 되었습니다.</span>
 
-![Passage Shuffle](/images/mrc_odqa/mrc/image-20211110155322213.png)
+![Passage Shuffle](/images/mrc_odqa/image-20211110155322213.png)
 
 이러한 아이디어에 착안하여 위와 같이 Ground Truth 와 Negative Sample 의 순서를 random 하게 섞어줌으로써 Reader 의 성능 향상을 기대해볼 수 있었습니다.
 
 ### Sentence Shuffle + Passage Shuffle
 
-![Sentence Shuffle + Passage Shuffle](/images/mrc_odqa/mrc/image-20211110155406916.png)
+![Sentence Shuffle + Passage Shuffle](/images/mrc_odqa/image-20211110155406916.png)
 
 또한 앞의 두 아이디어와 비슷한 기대를 하며 Passage 들을 섞고 난 뒤 각각의 Passage 의 문장들까지 섞어놓은 학습데이터까지 구축하게 되었습니다. 이렇게 위의 세 가지 방식을 사용하여 처음보다 3배의 데이터를 추가로 확보할 수 있었습니다.
 
@@ -405,14 +405,14 @@ kss 라이브러리의 `split_sentences` 함수를 사용하여 passage 를 문�
 
 1. NER + Question Generation
 
-   ![NER & Question Generation](/images/mrc_odqa/mrc/image-20211110155258759.png)
+   ![NER & Question Generation](/images/mrc_odqa/image-20211110155258759.png)
 
    Pororo 의 NER 은 Entity 가 없으면 `'O'` 를 반환합니다. 따라서 'O' 가 부착되지 않은 Entity 를 정답으로 하는 질문을 생성해냈고, 약 14만 건의 데이터를 확보할 수 있었습니다. <span class="linear_highlight">다만 질문의 퀄리티가 상당히 좋지 않았기 때문에 filtering 을 거칠 필요가 있었습니다.</span> 정성적으로 살펴본 결과 entity 의 길이가 짧은 것들 대부분에 의존명사가 포함되어 있었고, 질문이 이러한 entity 를 제대로 표현할 수 없겠다는 생각이 들었습니다. 
    학습 데이터셋의 정답 길이의 평균이 6 이상이었기 때문에 길이가 6보다 적은 entity 를 제거하였고, 약 2만 3천 개 정도의 질문이 남게 되었습니다. 또한 다른 target 에 대하여 동일한 질문이 곳곳에 포함되어 있었고, target 과 전혀 상관없는 질문이 생성되기도 하였습니다. 그래서 저는 [Pororo Semantic Textual Similarity](https://kakaobrain.github.io/pororo/text_cls/sts.html) 를 사용하여 질문과 답변의 유사도가 0.5 이상인 것들만 추려서 최종적으로 약 2천 개의 데이터를 확보하게 되었습니다.
 
 2. Wiki Title question generation
 
-  ![Wiki Title Question Generation](/images/mrc_odqa/mrc/image-20211110214338773.png)
+  ![Wiki Title Question Generation](/images/mrc_odqa/image-20211110214338773.png)
 
   Named Entity 를 Target 으로 하여 생성해낸 질문들을 필터링하니 데이터가 별로 남지 않아서 다른 방법을 고안하게 되었습니다. Wiki의 title 을 Target 으로 질문을 생성해내면 <span class="linear_highlight">문서를 대표하는 정답으로 질좋은 질문들을 생성해낼 수 있다</span>고 판단했기 때문입니다. 이 때 주어진 Wiki 에서 중복을 제거하고, Title 이 겹치는 문서들도 제거한 31,726 개의 Wiki 문서에서 Title 이 문서 내에 포함되어 있는 문서의 개수는 약 17,000 개였습니다. 저는 KoGPT-2 를 사용하여 17,000 여개의 정답을 Target 으로 하는 질문들을 생성했습니다.
 
@@ -435,11 +435,11 @@ Augmentation 을 진행했는데 성능 개선을 못 본 것에 대하여 아�
 
 따라서 Level 1, 2, 3 세 단계를 두고 Augmented Dataset, Passage Shuffled Dataset, Sentence and Passage Shuffled Dataset 난이도별로 학습을 시켜보게 되었습니다.
 
-![Curriculum Learning Workflow](/images/mrc_odqa/mrc/image-20211110155032798.png)
+![Curriculum Learning Workflow](/images/mrc_odqa/image-20211110155032798.png)
 
-![W&B line chart Curriculum Learning](/images/mrc_odqa/mrc/image-20211110155211405.png)
+![W&B line chart Curriculum Learning](/images/mrc_odqa/image-20211110155211405.png)
 
-![Curriculum Learning Benchmark](/images/mrc_odqa/mrc/image-20211110224114767.png)
+![Curriculum Learning Benchmark](/images/mrc_odqa/image-20211110224114767.png)
 
 
 기존 가장 높은 점수를 기록했던 모델보다 약 3점의 스코어 향상이 있었고, Curriculum Learning 을 통해 얻은 결과들을 Ensemble 했을 때는 약 5점의 스코어 향상을 기록할 수 있었습니다.
@@ -477,7 +477,7 @@ BERT 계열의 비슷한 모델을 Combine 하는 것은 단순 Layer 를 두 �
 
 또한 PyTorch 혹은 Huggingface transformers 와 같은 라이브러리의 버전에 따라서도 float dividing 이나 연산의 처리가 달라질 수 있기 때문에 버저닝에 따른 결과가 다를 수 있다는 것을 알게 되었습니다. 저희는 Pytorch 를 가장 최신버전인 1.10.0 으로 업그레이드하여 조금의 성능 향상을 이끌 수 있었습니다. 
 
-![Pytorch Version Benchmark](/images/mrc_odqa/mrc/image-20211111124458612.png)
+![Pytorch Version Benchmark](/images/mrc_odqa/image-20211111124458612.png)
 
 
 결과적으로 위의 모든 시도들을 종합했을 때 Public Leaderboard 에서 단일모델 69.580 이라는 점수를 달성할 수 있었습니다.
@@ -501,7 +501,7 @@ for i, (train_idx, valid_idx) in enumerate(kfold.split(dataset)):
     split_datasets.append(split_dataset)
 ```
 
-![KFold Cross Validation](/images/mrc_odqa/mrc/image-20211111134617529.png)
+![KFold Cross Validation](/images/mrc_odqa/image-20211111134617529.png)
 
 하지만 Public Leaderboard 기준으로 KFold 를 수행한 결과가 단일모델 대비 2점 가량 낮은 67.500 를 기록하였습니다. 실제 Private Leaderboard 결과에서도 단일모델보다 성능이 떨어졌습니다. 그 이유로는
 
@@ -564,7 +564,7 @@ for i, (train_idx, valid_idx) in enumerate(kfold.split(dataset)):
 
 아래 그림과 같은 두 예측 결과를 사용한다고 할 때, 두 모델의 "사락사라" 라는 예측값의 확률을 더한 결과가 약 1.5987로 가장 높아 "사락사라"를 첫번째 질문에 대한 정답으로 선택하는 방식입니다.
 
-![Soft Voting](/images/mrc_odqa/mrc/softvote.png)
+![Soft Voting](/images/mrc_odqa/softvote.png)
 
 Soft Voting 방식으로 Public EM 62점 이상의 30개의 결과를 앙상블한 결과 약 3점 정도 상승한 **72.080** 의 EM Score 를 기록할 수 있었습니다.
 
@@ -648,7 +648,7 @@ for key in mrc_id:
 
 Leaderboard 의 score 차이가 크지 않은 soft voting 결과와 hard voting에 rule base 알고리즘을 수행한 결과에 후처리를 적용하여 최종 제출물로 선택하려고 했습니다. 후처리는 정답 중 '이', '에'와 같은 조사로 끝나는 정답들에 대해 <span class="linear_highlight">konlpy의 POS tagger를 이용하여 정답에서 조사를 제거</span>해주었습니다.
 
-![Private Leaderboard](/images/mrc_odqa/mrc/final_result.png)
+![Private Leaderboard](/images/mrc_odqa/final_result.png)
 
 
 마지막에는 서버상 오류로 soft voting한 결과는 제출하지 못하였지만, hard voting 결과가 public leaderboard 점수보다 오히려 상승한 **EM 71.670, F1 81.400** 을 기록하며 최종 3위를 기록할 수 있었습니다.
@@ -668,7 +668,7 @@ Retro Reader 는 [SQuAD2.0 Benchmark](https://paperswithcode.com/sota/question-a
 Retro Reader 의 논문 [Retrospective Reader for Machine Reading Comprehension](https://arxiv.org/abs/2001.09694v4) 을 살펴보면, Answerable 을 판별하고 정답을 예측하는 Sketch Reader 와 정답을 예측하는 Intensive Reader 로 구성되어 있으며, 이들의 예측값을 바탕으로 Decoder 에서 최종 정답을 예측하는 방식입니다.
 
 
-![Retro Reader Architecture](/images/mrc_odqa/mrc/retro_reader.png)
+![Retro Reader Architecture](/images/mrc_odqa/retro_reader.png)
 
 해당 방식의 Github [AwesomeMRC](https://github.com/cooelf/AwesomeMRC) 을 참고하여 구현을 시도해보았지만 <span class="linear_highlight">Huggingface 의 transformers 버전이 매우 낮아서 Porting 하여 사용하기에는 레거시가 많이 존재</span>하였습니다. 또한 <span class="linear_highlight">No Answer 에 대한 데이터셋을 따로 구축했어야 했는데, 이 때 Dataset 의 Scale 을 어떻게 조정해야할지 정하지 못했습니다.</span> 단순하게 생각해보면 Train dataset 의 전체 질문들에 대해 Ground Truth 를 제외한 모든 Wiki 의 Passage 를 붙일 수 있었고, 양을 조절하여 Random 하게 No Answer Passage 를 뽑아올 수 있었으나 정확한 기준을 세우지 못하였으며 또한 Question Generation, AEDA 등으로 증강한 데이터셋을 활용하였을 때 학습 시간만 오래 들고 별다른 성능 향상을 보지 못했기 때문에 생각만 하고 시도하지 않았습니다.
 
@@ -695,7 +695,7 @@ Reader 가 정답을 예측할 때 정답인 것으로 예측되는 문장과, �
 
 **Similarity Embedding**
 
-![](/images/mrc_odqa/mrc/image-20211110234505636.png)
+![](/images/mrc_odqa/image-20211110234505636.png)
 
 Huggingface 의 [RobertaEmbeddings](https://huggingface.co/transformers/_modules/transformers/models/roberta/modeling_roberta.html#RobertaForQuestionAnswering) 를 살펴보면 BERT 의 구조와 동일하게 `Token Embeddings, Segment Embeddings, Position Embeddings` 를 모두 더한 뒤 LayerNormalization 과 Dropout 을 취한 Embedding 을 반환합니다. <span class="linear_highlight">이 때 Sentence Transformer 로 계산한 Query 와 Passage 의 Embedding 을 더해주면, 단순히 유사도를 포함한 Embedding 을 고려할 수 있을 것이란 생각을 했습니다.</span>
 
@@ -734,7 +734,7 @@ Summarization Task 의 `Content Selector` 방식에서는 중요 문장들의 �
 
 따라서 <span class="linear_highlight">정답을 찾을 수 있는 문장들의 후보가 아닌, 유사도를 기반으로 질문과 유사한 문장들에 대해서 가중치를 주는 방식</span>을 생각해내게 되었습니다. 아이디어의 검증은 저희팀의 든든한 멘토님이신 이유경 멘토님께서 도와주셨으며 hidden state 에 대해서 가중치를 주는 방식만 보았을 때는 틀린 접근이 아니라는 말씀을 주셨기 때문에 걱정없이 시도해볼 수 있었습니다.
 
-![](/images/mrc_odqa/mrc/image-20211111133432522.png)
+![](/images/mrc_odqa/image-20211111133432522.png)
 
 과정을 간략하게 풀어쓰면 아래와 같습니다.
 
@@ -756,7 +756,7 @@ Summarization Task 의 `Content Selector` 방식에서는 중요 문장들의 �
 
 
 
-![](/images/mrc_odqa/mrc/ape.png)
+![](/images/mrc_odqa/ape.png)
 
 
 APE 방식은 질문에 대해 Retrieval 이 수행한 n개의 Passage 에 대하여 Pruning 방식으로 적절한 Passage 로 여겨지는 Candidates 를 추리고, 해당 Candidates 에 Attention 을 수행하는 방법입니다. 
