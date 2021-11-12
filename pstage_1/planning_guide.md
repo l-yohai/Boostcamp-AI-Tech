@@ -16,7 +16,7 @@
 <br>
 
 
-![](/images/image-20210903191905704.png)
+![](/images/mask_image_classification/image-20210903191905704.png)
 
 <br>
 
@@ -85,7 +85,7 @@
 사전에 사용하던 채널로는 화상회의를 위한 줌, 공식적인 이야기를 위한 슬랙 채널, 그리고 코드관리를 위한 깃허브의 팀 Repo가 있었습니다. 하지만 이것만으로는 프로젝트 관리나 일정관리를 하기가 애매했어서, 새로운 채널을 만들 필요가 있었습니다. 해당 후보로는 Github Project의 대시보드, Jira, Notion 등이 있었는데 최종적으로는 Github Project를 사용하기로 결정했습니다. 칸반보드 기반의 Dashboard를 생성하면 TODO를 시각적으로 관리하기가 용이하고, Milestone이나 Label, Assignee 등 여러 장치들을 직관적으로 사용할 수 있기 때문입니다. 그리고 다른 템플릿 역시 다들 처음이지만, 사전학습 비용이 Github Project가 가장 적을 것 같았고, 채널이 다양해지면 다양할수록 팀원들의 혼란이 가중될 것 같다는 이유 또한 있었습니다.
 
 <p align="center">
-  <img src = "/images/image-20210903171740158.png" width="50%" height="50%">
+  <img src = "/images/mask_image_classification/image-20210903171740158.png" width="50%" height="50%">
 </p>
 
 저희는 위의 사진처럼, Github Project의 Kanban Dashboard를 사용했고, 매일 아침 9시 30분마다 당일 작업할 TODO 리스트를 업데이트하는 식으로 진행했습니다. 그리고 각각의 이름을 가진 라벨을 만들어서 누가 해당 TODO를 작업중인지 표시하도록 했습니다.
@@ -101,7 +101,7 @@
 하지만 막상 대회 시작 후 베이스라인 코드가 너무 어렵고, 다른 할 것들이 많아서 정신이 없었으며 그리고 협업이 처음인 저희는 Git 자체가 너무나도 어려웠기 때문에 결국에는 Git Flow를 활용한 코드관리에 실패하였습니다.
 
 <p align="center">
-  <img src="/images/image-20210903173613783.png" width="50%">
+  <img src="/images/mask_image_classification/image-20210903173613783.png" width="50%">
 </p>
 
 <br>
@@ -152,7 +152,7 @@
 **1. 라벨 별 데이터가 어떻게 분포되어있는지 판단하자.**
 
 <p align="center">
-  <img src="/images/image-20210903184436458.png">
+  <img src="/images/mask_image_classification/image-20210903184436458.png">
 </p>
 
 저희가 EDA 과정에서 가장 중요하게 생각한 것은 데이터가 Imbalancing 하지 않은지 확인하는 것이었습니다. 어느 한 쪽으로 데이터가 쏠려있으면 모델은 데이터가 적은 라벨을 쉽게 맞추지 못할 것이기 때문입니다.
@@ -162,7 +162,7 @@
 **2. Evaluation Dataset의 분포는 어떻게 되어있는지 확인하자.**
 
 <p align="center">
-  <img src="/images/image-20210903184759275.png">
+  <img src="/images/mask_image_classification/image-20210903184759275.png">
 </p>
 
 대회 1주차에는 하루에 개인별 10회씩 제출이 가능했습니다. 저희는 대회 초반엔 분명히 제출을 하지 못할 것이라 예상하고, 제출할 때 0부터 17까지 모든 라벨로만 Submission을 구성하여 제출했습니다. 이렇게 각 라벨별로 제출해보고 얻은 Accuracy 정보를 토대로 Evaluation 셋에 대한 정답 분포를 시각화할 수 있었습니다.
@@ -327,7 +327,7 @@ Hard하게 Augmentation을 적용한 이미지를 데이터셋에 추가하기�
 
 ### 🥉 최종 모델 개요
 
-![](/images/image-20210903144842911.png)
+![](/images/mask_image_classification/image-20210903144842911.png)
 ![image](https://user-images.githubusercontent.com/49181231/132098313-6f9e7f2e-376c-44c8-a57d-e56cffd10168.png)
 
 
@@ -358,7 +358,7 @@ Hard하게 Augmentation을 적용한 이미지를 데이터셋에 추가하기�
 <br>
 
 <p align="center">
-  <img src="/images/image-20210903215626128.png">
+  <img src="/images/mask_image_classification/image-20210903215626128.png">
 </p>
 
 <p align="center">
@@ -421,19 +421,19 @@ Hard하게 Augmentation을 적용한 이미지를 데이터셋에 추가하기�
 ### 🎉 Tensorboard에 Confusion Matrix 시각화
 
 <p align="center">
-  <img src="/images/image-20210903185413325.png">
+  <img src="/images/mask_image_classification/image-20210903185413325.png">
 </p>
 
 ### 🎉 Wandb 사용
 
 <p align="center">
-  <img src="/images/image-20210903224929293.png" width="50%">
+  <img src="/images/mask_image_classification/image-20210903224929293.png" width="50%">
 </p>
 
 ### 🎉 Evaluation에 대한 클래스별 오차 비율 시각화
 
 <p align="center">
-  <img src="/images/image-20210903225031759.png">
+  <img src="/images/mask_image_classification/image-20210903225031759.png">
 </p>
 
 <br>
