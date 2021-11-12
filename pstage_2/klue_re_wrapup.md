@@ -36,8 +36,8 @@
 
 ### ⛰ 청계산셰르파
 <p align="center">
-    <img src="/images/profile.png" style="display: inline" height="120px">
-    <img src="/images/2.png" style="display: inline" height="120px">
+    <img src="/images/klue_re/profile.png" style="display: inline" height="120px">
+    <img src="/images/klue_re/2.png" style="display: inline" height="120px">
 </p>
 
 저희는 캠프 기간동안 모든 것을 생생하게 기억하고 나누는 `기록`과 `공유`라는 가치에 공감한 7명이 모여 팀을 구성했고, 서로가 서로의 가이드로서 좋은 영향을 주고받을 수 있는 셰르파가 되기를 원했습니다.
@@ -83,11 +83,11 @@
 저희가 사용한 데이터셋은 [「KLUE: Korean Language Understanding Evaluation」(Park et al., 2021)](https://arxiv.org/pdf/2105.09680.pdf)을 통해 공개된 KLUE-RE 데이터셋으로, KLUE 데이터셋을 사전학습한 RoBERTa를 fine-tuning하여 베이스모델로 사용하였으며, private leaderboard에서 f1 score 기준 19팀 중 5등, auprc 기준 19팀 중 2등을 기록하였습니다.
 
 🥈 Final Score
-![](/images/final.png)
+![](/images/klue_re/final.png)
 - micro F1 score: 73.732 (19팀 중 **5등**)
 - AUPRC score: 82.964 (19팀 중 **2등**)
 
-![묘비아님](/images/kakaotalk.png)
+![묘비아님](/images/klue_re/kakaotalk.png)
 
 
 ## 🤝 협업
@@ -175,9 +175,9 @@ RE 대회가 시작하기 1주일 전부터, 저희는 미리 대회를 위한 �
 `Notion`에서 일정관리, 문서관리, 실험관리 등 많은 기능을 사용하기 위해 엄밀하게 Template을 찾아보며 Dashboard를 구성하였고 그렇게 아래와 같은 페이지를 구성할 수 있었습니다.
 
 <p align="center">
-    <img src="/images/notion_main.png" style="display: inline" height="220px" width="32%">
-    <img src="/images/notion_kanban.png" style="display: inline" height="220px" width="32%">
-    <img src="/images/notion_schedule.png" style="display: inline" height="220px" width="32%">
+    <img src="/images/klue_re/notion_main.png" style="display: inline" height="220px" width="32%">
+    <img src="/images/klue_re/notion_kanban.png" style="display: inline" height="220px" width="32%">
+    <img src="/images/klue_re/notion_schedule.png" style="display: inline" height="220px" width="32%">
 </p>
 
 **Main Dashboard**
@@ -185,7 +185,7 @@ RE 대회가 시작하기 1주일 전부터, 저희는 미리 대회를 위한 �
 - TODO와 실험관리를 위한 kanban 보드
     - 실험을 위한 Process별 Tag 부착
 
-        <img src="/images/no_tag.png" height="30%" width="30%">
+        <img src="/images/klue_re/no_tag.png" height="30%" width="30%">
 
     - Assignee 할당
 - 일정관리를 위한 schedule
@@ -198,7 +198,7 @@ RE 대회가 시작하기 1주일 전부터, 저희는 미리 대회를 위한 �
 
 ### 💻 코드 관리
 
-![](/images/git1.png)
+![](/images/klue_re/git1.png)
 
 초반에는 전체 코드를 관리하기 위해 PR-Merge 방법으로 진행하다가 Review가 늦어지거나, 작업시간이 오래걸리면 다른 팀원이 같은 작업을 하는 등 예상치 못한 병목이 발생하고 오히려 개인 실험에 방해요소로 작용할 수 있다는 판단을 하게 되었습니다.
 
@@ -212,18 +212,18 @@ RE 대회가 시작하기 1주일 전부터, 저희는 미리 대회를 위한 �
 따라서 baseline으로 사용할 수 있는 코드에서 각자의 이름 혹은 실험 이름으로 분기를 나누어 개인 작업을 진행하면서, 사전에 논의했던 것처럼 score가 올랐을 경우에만 baseline 코드에 PR-Merge를 하고, 해당 score를 재현가능할 수 있게끔 버전업하기로 했습니다.
 </span>
 
-![](/images/bran.png)
+![](/images/klue_re/bran.png)
 
 branch가 많아지긴 했지만, 실험에 실패했을 때 빠르게 Rollback할 수 있었고, 각자의 실험에서 확실한 성능향상 요소만을 합칠 수 있었습니다. Competition이라는 플랫폼의 특성상 7명의 팀원이 각자 작성한 모든 코드들을 Review하고 합치면서 작업을 이어나가기에는 많은 시간과 노력을 필요로 했습니다. 하지만 기준을 두고 필요할 때만 코드를 병합하니 실험은 실험대로 잘 이루어지고, 실험에 실패하더라도 가장 최신버전의 코드를 모두가 사용할 수 있었다는 점에서 많은 이점을 얻을 수 있었습니다.
 
 ### 🧑‍🔬 체계적인 실험
 
-![](/images/notion_kanban.png)
+![](/images/klue_re/notion_kanban.png)
 
 저희는 Kanban board를 사용하여 실험을 관리하였습니다.
 
 <p align="center">
-    <img src="/images/exp_tag.png" height="30%" width="30%">
+    <img src="/images/klue_re/exp_tag.png" height="30%" width="30%">
 </p>
 
 Backlog, TO-DO, In progress, Completed 네 단계로 나누어 서로가 어떤 실험을 진행하고 있는지, 어떤 실험을 해야하는지 파악할 수 있게 하였으며 실험이 끝날 때마다 그때그때 갱신하는 작업을 진행하였습니다.
@@ -237,15 +237,15 @@ Backlog, TO-DO, In progress, Completed 네 단계로 나누어 서로가 어떤 
 Backlog에 진행해보고 싶은 실험카드가 생겼거나, 다른 실험 아이디어가 생긴 경우에는 Notion의 `Comment` 기능을 이용하여 이미 진행중인 실험이면 해당 실험의 진행상황이나 주의사항들을 더 자세하게 공유할 수 있게 하였습니다.
 
 <p align="center">
-    <img src="/images/notion_comm2.png">
-    <img src="/images/notion_comm.png">
+    <img src="/images/klue_re/notion_comm2.png">
+    <img src="/images/klue_re/notion_comm.png">
 </p>
 
 실험카드가 `Completed`로 이동하게 되면 아래와 같이 실험기록표에 결과를 작성하고, 실험의 성공여부와 관계없이 그 실험에 대한 평가와 그런 결과가 나온 이유 혹은 주의사항 등을 기록하게 하였습니다.
 
 <p align="center">
-    <img src="/images/exp1.png">
-    <img src="/images/notion_exp.png">
+    <img src="/images/klue_re/exp1.png">
+    <img src="/images/klue_re/notion_exp.png">
 </p>
 
 <span class="linear_highlight">
@@ -256,13 +256,13 @@ Backlog에 진행해보고 싶은 실험카드가 생겼거나, 다른 실험 �
 
 ### 👁 Data EDA
 
-![](/images/eda.png)
+![](/images/klue_re/eda.png)
 
 데이터는 위와 같이 매우 불균형하게 분포되어 있었고, 9,000개가 넘는 no_relation과 달리 `per:place_of_death`처럼 약 40개 정도만 존재하는 label도 있었습니다.
 
 이렇게 극단적인 Data Imbalancing을 잘 잡는 것이 이번 대회의 핵심이라고 생각하게 되었습니다.
 
-![김채은 캠퍼님의 토론게시판 글 중](/images/dup.png)
+![김채은 캠퍼님의 토론게시판 글 중](/images/klue_re/dup.png)
 
 또한 sentence와 subject_entity, object_entity까지 전부 동일한 문장이 53개가 있는 등 중복된 데이터와 mislabeled 데이터들이 존재하였고, 이것들을 전부 제거하고 수정하여 데이터셋을 재구성하였습니다.
 
@@ -275,9 +275,9 @@ Backlog에 진행해보고 싶은 실험카드가 생겼거나, 다른 실험 �
     - 두 방법 모두 아무것도 하지 않았을 때보다 validation score가 낮았음.
 2. [Undersampling & Oversampling](https://imbalanced-learn.org/stable/)
     imblearn 라이브러리를 사용하여 SMOTE로 Sampling 진행
-    ![Undersampling](/images/under.png)
+    ![Undersampling](/images/klue_re/under.png)
 
-    ![Oversampling](/images/over.png)
+    ![Oversampling](/images/klue_re/over.png)
     
     - 두 방법 모두 아무것도 하지 않았을 때보다 validation score가 낮았음.
 3. Back Translation
@@ -291,7 +291,7 @@ Backlog에 진행해보고 싶은 실험카드가 생겼거나, 다른 실험 �
 
 하지만 이러한 augmentation 기법들에 대해서 많은 효과를 볼 수가 없었는데, `confusion matrix`를 통해 원인을 유추해볼 수 있었습니다.
 
-![](/images/conf.png)
+![](/images/klue_re/conf.png)
 
 처음 예상과 다르게 적은 label의 데이터를 생각보다 잘 맞추고 있었고, *오히려 데이터 수가 가장 많았던 `no_relation` 예측에서 많이 틀리고 있었기 때문* 이었습니다. 따라서 전체 데이터셋에 대해서 augmentation을 진행한 방식, 그리고 sampling 방식으로는 효과를 보지 못했다는 것을 알 수 있었습니다.
 
@@ -303,14 +303,14 @@ Backlog에 진행해보고 싶은 실험카드가 생겼거나, 다른 실험 �
 1. Dynamic Padding
     Huggingface의 Tokenizer는 `max_length` 인자를 통해 기본적으로 `fixed padding` 방식을 사용합니다. 저희는 더 빠른 실험을 통해 `dynamic padding` 방식으로 변경하였고 그 결과 약 30%의 속도를 향상시킬 수 있었습니다.
 
-    ![fixed padding](/images/fixed.png)
+    ![fixed padding](/images/klue_re/fixed.png)
 
-    ![dynamic padding](/images/dynamic.png)
+    ![dynamic padding](/images/klue_re/dynamic.png)
 
 2. [An Improved Baseline for Sentence-level Relation Extraction](https://arxiv.org/pdf/2102.01373.pdf)
     문장의 Subject, Object Entity의 NER Type을 명시해주고, Entity의 위치를 사전학습에서 사용된 특수문자를 이용하여 표기하는 Typed Entity Marker를 적용했습니다.
 
-    ![](/images/token.png)
+    ![](/images/klue_re/token.png)
     1. vanilla : 기본 베이스라인 input
     2. special_ent : `기본 베이스라인 input + [sbj][sbj/] + [obj][obj/]`
     3. special_ent_without_prefix : 기본 베이스라인 input의 앞에있는 `subject [sep] object [sep] 부분을 제거`하고 `special token`을 사용 (4, 5번 역시 prefix를 제거함) 
@@ -863,18 +863,18 @@ class RBERT(RobertaPreTrainedModel):
 
 ### 👨‍🎨 앙상블 깎는 노인과 기도메타
 
-![soft voting](/images/soft_voting.jpg)
+![soft voting](/images/klue_re/soft_voting.jpg)
 
 저희는 public leaderboard 기준 73 정도의 micro f1 score를 기록하였지만 예측 분포가 다른 결과들을 `soft voting`하여 public leaderboard 기준 74.306의 micro f1 score를 기록할 수 있었습니다.
 
 <p align="center">
-    <img src="/images/기도1.png" style="display: inline" height="100px">
-    <img src="/images/기도2.png" style="display: inline" height="100px">
-    <img src="/images/기도3.png" style="display: inline" height="100px">
-    <img src="/images/기도4.png" style="display: inline" height="100px">
+    <img src="/images/klue_re/기도1.png" style="display: inline" height="100px">
+    <img src="/images/klue_re/기도2.png" style="display: inline" height="100px">
+    <img src="/images/klue_re/기도3.png" style="display: inline" height="100px">
+    <img src="/images/klue_re/기도4.png" style="display: inline" height="100px">
 </p>
 <p align="center">
-    <img src="/images/기도5.png" height="100px">
+    <img src="/images/klue_re/기도5.png" height="100px">
 </p>
 
 <p>
@@ -886,7 +886,7 @@ class RBERT(RobertaPreTrainedModel):
 
 결과적으로 모델링 실험에서 압도적인 성능 향상을 이루진 못했지만, 비슷한 점수의 다른 분포를 가지는 결과들을 많이 만들어놓았던 것이 앙상블에서 더욱 일반화된 결과를 얻을 수 있었던 요인이었다고 생각합니다.
 
-![](/images/final.png)
+![](/images/klue_re/final.png)
 
 
 ## 💯 Good Practice
@@ -895,7 +895,7 @@ class RBERT(RobertaPreTrainedModel):
 
 - fp16
 
-    ![](/images/fp16.png)
+    ![](/images/klue_re/fp16.png)
     fp16은 `Mixed-Precision Training`으로 32-bit Floating Point가 아닌 16-bit Floating Point를 사용하는 방식입니다. 이 방식을 통해 모델을 학습시킬 때 성능은 비슷하지만 약 60% 가량의 향상된 속도로 학습을 진행할 수 있었습니다.
     `TrainingArguments`에 `fp16=True`, `fp16_opt_level='O1'`만 추가하면 바로 사용할 수 있어서 간단하게 다양한 실험을 진행할 수 있었습니다.
 
@@ -957,21 +957,21 @@ class RBERT(RobertaPreTrainedModel):
         ```
     </details>
 
-    ![단점 - 용량꽉참](/images/용량꽉참.png)
+    ![단점 - 용량꽉참](/images/klue_re/용량꽉참.png)
 
 또한 `W&B`를 팀으로 만들어서 팀원들이 실험하는 결과들을 전부 공유할 수 있게 만들었습니다. 덕분에 실패한 실험이나 성공한 실험들에 대해서 chart를 통해 더욱 쉽고 직관적으로 모델을 검증할 수 있었고, 팀원간 더 빠른 결과 공유가 가능했습니다. 
 
 <p align="center">
-    <img src="/images/w0.png" height="300px">
+    <img src="/images/klue_re/w0.png" height="300px">
 </p>
 
 <p align="center">
-    <img src="/images/w1.png" style="display: inline" height="120px">
-    <img src="/images/w2.png" style="display: inline" height="120px">
+    <img src="/images/klue_re/w1.png" style="display: inline" height="120px">
+    <img src="/images/klue_re/w2.png" style="display: inline" height="120px">
 </p>
 <p align="center">
-    <img src="/images/w3.png" style="display: inline" height="120px">
-    <img src="/images/w4.png" style="display: inline" height="120px">
+    <img src="/images/klue_re/w3.png" style="display: inline" height="120px">
+    <img src="/images/klue_re/w4.png" style="display: inline" height="120px">
 </p>
 
 ## 💌 Thanks to
@@ -979,8 +979,8 @@ class RBERT(RobertaPreTrainedModel):
 ***청계산셰르파의 비밀병기, 이유경 멘토님.***
 
 <p align="center">
-    <img src="/images/notion_mentoring.png" style="display: inline" height="360px">
-    <img src="/images/notion_qna.png" style="display: inline" height="360px">
+    <img src="/images/klue_re/notion_mentoring.png" style="display: inline" height="360px">
+    <img src="/images/klue_re/notion_qna.png" style="display: inline" height="360px">
 </p>
 
 정말 바쁘신 와중에도 많은 것을 알려주시려고 열심히 찾아보시고, 따로 공부도 해가시면서 저희에게 많은 도움을 주셨습니다. 저희의 등반일지에 가장 큰 기여를 하신 이유경 멘토님께 다시한번 감사의 말씀 전해드리고 싶습니다.
@@ -988,7 +988,7 @@ class RBERT(RobertaPreTrainedModel):
 <br>
 
 ***청계산셰르파 팀명에 항상 불만을 가지시는 성예닮 멘토님***
-![](/images/1.png)
+![](/images/klue_re/1.png)
 
 유경멘토님의 사생팬답게 저희팀에도 많은 관심가져주시고 지켜봐주셔서 정말 든든합니다. 항상 말씀못드리는게 죄송할정도로, 많은 도움 주시고 알려주셔서 정말 감사합니다.
 
