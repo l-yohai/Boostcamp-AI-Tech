@@ -16,8 +16,6 @@
 
 <a href="https://github.com/l-yohai/Boostcamp-AI-Tech/tree/main/pstage_1/memoir.md"><strong>회고록 보러가기 »</strong></a>
 
-<br>
-
 <a href="https://github.com/l-yohai/Boostcamp-AI-Tech/tree/main/pstage_1/planning_guide.md"><strong>플래닝가이드 보러가기 »</strong></a>
 
 
